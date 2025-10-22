@@ -8,12 +8,7 @@ from src.Types import DataType
 class YAMLDataReader(DataReader):
 
     def read(self, path: str) -> DataType:
-        """Читает YAML в формате:
-        - Имя Фамилия:
-            предмет1: оценка1
-            предмет2: оценка2
-        и возвращает DataType: dict[str, list[tuple[str,int]]]
-        """
+
         with open(path, 'r', encoding='utf-8') as file:
             raw_data = yaml.safe_load(file)
 
